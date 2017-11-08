@@ -65,7 +65,7 @@ function numberHasError($numericCharacter)
         $unSanitisedName = $_POST[$numericCharacter];
         $name = sanitiseInput($unSanitisedName);
         // check if name only contains letters and whitespace
-        if (!preg_match("/^[1-9][0-9]*$/", $name)) {
+        if (!is_numeric($name)) {
             return true;
         }
     }
