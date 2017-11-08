@@ -1,0 +1,42 @@
+html {
+    font-family: Verdana, sans-serif;
+}
+
+h1 {
+    color: orange;
+    font-family: Verdana, sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+label, input {
+    display: block;
+}
+
+.success-message {
+    color: rgb(50, 205, 50);
+}
+
+.failure-message {
+    color: red;
+    font-weight: bold;
+}
+
+.answer-message, .actual-answer {
+    color: orange;
+    font-weight: bold;
+}
+
+span.error {
+    color: red;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+}
+
+/* Dropdown Menu CSS */
+
+
