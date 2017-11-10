@@ -3,7 +3,8 @@
 //this function takes two inputs and adds them together (provided they are numbers)
 function addNumbers($num1, $num2)
 {
-    return $num1 + $num2;
+    $z = $num1 + $num2;
+    return $z;
 }
 
 //this function takes two inputs and subtracts them (provided they are numbers)
@@ -54,8 +55,6 @@ function sanitiseInput($data)
  * @param $numericCharacter
  * @return bool
  *
- * @todo refactor this function to use "is_numeric"
- *
  */
 function numberHasError($numericCharacter)
 {
@@ -84,3 +83,19 @@ function numberHasError($numericCharacter)
   }
 
   //I want this function to select the ID of each calculation option and relate it to a relevant function
+function differentCalculations($calculation, $num1, $num2)
+{
+
+    //@todo refactor to use switch statement
+    if ($calculation == 'add') {
+        $a = addNumbers($num1, $num2);
+    } elseif ($calculation == 'subtract') {
+        $a = subtractNumbers($num1, $num2);
+    } elseif ($calculation == 'multiply') {
+        $a = multiplyNumbers($num1, $num2);
+    } elseif ($calculation == 'divide') {
+        $a = divideNumbers($num1, $num2);
+    }
+    return $a;
+
+}

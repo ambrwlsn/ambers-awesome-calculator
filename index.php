@@ -1,92 +1,109 @@
 <?php
 $currentPage = "home";
-?>
-
-<?php include('html/head.php');
 include('includes/functions.php');
 ?>
-
-<h1>Amber's Awesome Calculator</h1>
 
 <?php
 
 $numOneErr = "";
 $numTwoErr = "";
 $numbersAreValid = true;
+$calculation = '';
+$noCalcPoss = '';
+$calcSuccess = '';
+$failMessage = 'No calculation possible - please try again';
+$successMessage = 'Top choice of numbers matey';
+
 
 if (formHasBeenSubmitted()) {
+
+    if (isset($_POST['calculation'])) {
+        $calculation = $_POST['calculation'];
+    }
+
     $num1 = $_POST['num1'];
     $num2 = $_POST['num2'];
+
+
 
     $numOneErr = numError('num1');
     $numTwoErr = numError('num2');
 
+
+    //@todo store message and message type in variable and display in view
+
+
+
     if (numberHasError('num1') || numberHasError('num2')) {
         $numbersAreValid = false;
-        echo '<span class="failure-message">No calculation possible - please try again</span><br/><br/>';
+        $noCalcPoss = $failMessage;
     } else {
-        echo '<strong class="success-message">Top choice of numbers matey</strong><br/><br/>';
+        $calcSuccess = $successMessage;
     }
 
-//    if ($numbersAreValid) {
-//        $answer = multiplyNumbers($num1, $num2);
-//    }
-
-//    if ($numbersAreValid && $_POST['submit'] && $calculation = 'subtract' == $_POST['calculation']) {
-//        $answer = subtractNumbers($num1, $num2);
-//}
-
-    if ($numbersAreValid && $_REQUEST['calculation'] == 'add') {
-        $answer = addNumbers($num1, $num2);
-    } elseif ($numbersAreValid && $_REQUEST['calculation'] == 'subtract') {
-        $answer = subtractNumbers($num1, $num2);
-    } elseif ($numbersAreValid && $_REQUEST['calculation'] == 'multiply') {
-        $answer = multiplyNumbers($num1, $num2);
-    } elseif ($numbersAreValid && $_REQUEST['calculation'] == 'divide') {
-        $answer = divideNumbers($num1, $num2);
+    if($numbersAreValid) {
+        $answer = differentCalculations($calculation, $num1, $num2);
     }
-
 }
-
-
-//    if ($_POST['submit']) {
-//        $calculation = $_POST['calculation'];
-//}
-
 
 ?>
 
-<form class="calculator" method="post" action="">
+<!-- End of Business Logic -->
 
-    <input type="text" name="num1" value="<?php echo $num1; ?>">
-    <?php if (!empty($numOneErr)): ?>
-        <span class="error"><?php echo $numOneErr; ?></span>
-    <?php endif; ?>
-    &nbsp;
+<!-- Start of View Logic -->
 
-    <select id="calculation" name="calculation">
-        <option value="add" <?php if ($_POST['calculation'] == 'add') echo 'selected="selected"'; ?>>+</option>
-        <option value="subtract" <?php if ($_POST['calculation'] == 'subtract') echo 'selected="selected"'; ?>>-</option>
-        <option value="multiply" <?php if ($_POST['calculation'] == 'multiply') echo 'selected="selected"'; ?>>*</option>
-        <option value="divide" <?php if ($_POST['calculation'] == 'divide') echo 'selected="selected"'; ?>>÷</option>
-    </select> &nbsp;
+<?php include('html/head.php'); ?>
 
+    <h1>Amber's Awesome Calculator</h1>
 
-    <br/>
-    <input type="text" name="num2" value="<?php echo $num2; ?>">
-    <?php if (!empty($numTwoErr)): ?>
-        <span class="error"><?php echo $numTwoErr; ?></span>
-    <?php endif; ?>
+<?php  if (formHasBeenSubmitted()) {
+    echo '<span class="success-message">' . $calcSuccess . '</span><br/><br/>';
+    }
+   ?>
 
-    <p>
-    <div class='form-row'>
-       &nbsp; <button type="submit" name="submit">Submit</button>
-    </div>
-    </p>
-</form>
+    <form class="calculator" method="post" action="">
 
 
-<?php if (!empty($answer)): ?>
+        <input type="text" name="num1" value="<?php echo $num1; ?>">
+        <?php if (!empty($numOneErr)): ?>
+            <span class="error"><?php echo $numOneErr; ?></span>
+        <?php endif; ?>
+        &nbsp;
+
+        <select id="calculation" name="calculation">
+            <option value="add" <?php if ($calculation == 'add') echo 'selected="selected"'; ?>>+</option>
+            <option value="subtract" <?php if ($calculation == 'subtract') echo 'selected="selected"'; ?>>-
+            </option>
+            <option value="multiply" <?php if ($calculation == 'multiply') echo 'selected="selected"'; ?>>*
+            </option>
+            <option value="divide" <?php if ($calculation == 'divide') echo 'selected="selected"'; ?>>÷
+            </option>
+        </select> &nbsp;
+
+
+        <br/>
+        <input type="text" name="num2" value="<?php echo $num2; ?>">
+        <?php if (!empty($numTwoErr)): ?>
+            <span class="error"><?php echo $numTwoErr; ?></span>
+        <?php endif; ?>
+
+        <p>
+        <div class='form-row'>
+            &nbsp;
+            <button type="submit" name="submit">Submit</button>
+        </div>
+        </p>
+    </form>
+
+<?php  if (formHasBeenSubmitted()) {
+    echo '<span class="success-message">' . $noCalcPoss . '</span><br/><br/>';
+}
+?>
+<?php echo '<span class="failure-message">' . $noCalcPoss . '</span>' ?>
+
+<!-- changed "!empty" to "isset" here because the "$answer = 0 was being evaluated as empty and the answer was not displayed in the view -->
+
+<?php if (isset($answer)): ?>
     <div class="">
         <span class="answer-message">The answer is:&nbsp</span> <?php echo $answer; ?>
     </div>

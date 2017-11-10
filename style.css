@@ -19,6 +19,7 @@ label, input {
 
 .success-message {
     color: rgb(50, 205, 50);
+    font-weight: bold;
 }
 
 .failure-message {
