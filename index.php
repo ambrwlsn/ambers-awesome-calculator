@@ -33,7 +33,6 @@ if (formHasBeenSubmitted()) {
     //@todo store message and message type in variable and display in view
 
 
-
     if (numberHasError('num1') || numberHasError('num2')) {
         $numbersAreValid = false;
         $noCalcPoss = $failMessage;
@@ -57,12 +56,11 @@ if (formHasBeenSubmitted()) {
     <h1>Amber's Awesome Calculator</h1>
 
 <?php  if (formHasBeenSubmitted()) {
-    echo '<span class="success-message">' . $calcSuccess . '</span><br/><br/>';
-    }
+    echo '<span class="success-message">' . $calcSuccess . '</span>';
+    echo '<span class="failure-message">' . $noCalcPoss . '</span><br/><br/>'; }
    ?>
 
     <form class="calculator" method="post" action="">
-
 
         <input type="text" name="num1" value="<?php echo $num1; ?>">
         <?php if (!empty($numOneErr)): ?>
@@ -80,7 +78,6 @@ if (formHasBeenSubmitted()) {
             </option>
         </select> &nbsp;
 
-
         <br/>
         <input type="text" name="num2" value="<?php echo $num2; ?>">
         <?php if (!empty($numTwoErr)): ?>
@@ -94,12 +91,6 @@ if (formHasBeenSubmitted()) {
         </div>
         </p>
     </form>
-
-<?php  if (formHasBeenSubmitted()) {
-    echo '<span class="success-message">' . $noCalcPoss . '</span><br/><br/>';
-}
-?>
-<?php echo '<span class="failure-message">' . $noCalcPoss . '</span>' ?>
 
 <!-- changed "!empty" to "isset" here because the "$answer = 0 was being evaluated as empty and the answer was not displayed in the view -->
 

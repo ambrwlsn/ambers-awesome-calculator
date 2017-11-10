@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a707f93d-e3db-4f65-a749-7c27c9c00243" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/functions.php" afterPath="$PROJECT_DIR$/includes/functions.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,14 +16,14 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="353">
+              <caret line="59" column="4" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
               <folding>
-                <element signature="e#1467#1473#0#HTML" expanded="true" />
-                <element signature="e#2039#2045#0#HTML" expanded="true" />
-                <element signature="e#2318#2324#0#HTML" expanded="true" />
-                <marker date="1510162275000" expanded="true" signature="2623:2944" ph="..." />
-                <marker date="1510162275000" expanded="true" signature="2814:2912" ph="..." />
+                <element signature="e#1530#1536#0#HTML" expanded="true" />
+                <element signature="e#2102#2108#0#HTML" expanded="true" />
+                <element signature="e#2380#2386#0#HTML" expanded="true" />
+                <marker date="1510308424000" expanded="true" signature="2490:2811" ph="..." />
+                <marker date="1510308424000" expanded="true" signature="2681:2779" ph="..." />
               </folding>
             </state>
           </provider>
@@ -34,8 +32,8 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="98" column="14" lean-forward="true" selection-start-line="98" selection-start-column="14" selection-end-line="98" selection-end-column="14" />
+            <state relative-caret-position="91">
+              <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -158,12 +156,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510135682218</updated>
-      <workItem from="1510135683414" duration="18531000" />
+      <workItem from="1510135683414" duration="20103000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18531000" />
+    <option name="totallyTimeSpent" value="20103000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -236,22 +234,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="98" column="14" lean-forward="true" selection-start-line="98" selection-start-column="14" selection-end-line="98" selection-end-column="14" />
+        <state relative-caret-position="91">
+          <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="353">
+          <caret line="59" column="4" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
           <folding>
-            <element signature="e#1467#1473#0#HTML" expanded="true" />
-            <element signature="e#2039#2045#0#HTML" expanded="true" />
-            <element signature="e#2318#2324#0#HTML" expanded="true" />
-            <marker date="1510162275000" expanded="true" signature="2623:2944" ph="..." />
-            <marker date="1510162275000" expanded="true" signature="2814:2912" ph="..." />
+            <element signature="e#1530#1536#0#HTML" expanded="true" />
+            <element signature="e#2102#2108#0#HTML" expanded="true" />
+            <element signature="e#2380#2386#0#HTML" expanded="true" />
+            <marker date="1510308424000" expanded="true" signature="2490:2811" ph="..." />
+            <marker date="1510308424000" expanded="true" signature="2681:2779" ph="..." />
           </folding>
         </state>
       </provider>
